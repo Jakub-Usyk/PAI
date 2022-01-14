@@ -10,11 +10,11 @@ class User
 
     public function __construct(string $username, string $password, string $email, string $name, string $surname)
     {
-        $this->email = $email;
-        $this->password = $password;
         $this->username = $username;
-        $this->surname = $surname;
+        $this->password = $password;
+        $this->email = $email;
         $this->name = $name;
+        $this->surname = $surname;
     }
 
     public function getUsername(): string

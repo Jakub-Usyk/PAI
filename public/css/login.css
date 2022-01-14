@@ -1,0 +1,86 @@
+.container > .form-panel > form > .button-login 
+{
+    height: 10vh;
+    width: 30%;
+    background: transparent linear-gradient(110deg, #B78F31 0%, #D5C49C 100%) 0% 0% no-repeat padding-box;
+    border: 0.1vmax solid #707070;
+    border-radius: 3vmax;
+    font: normal normal normal 1.6vmax Segoe UI;
+    color: #FFFFFF;
+    text-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
+    margin-top: 6vh;
+    margin-bottom: 4vh;
+}
+
+.container > .form-panel > form > .button-login:hover 
+{
+    background: transparent linear-gradient(110deg, #443309 0%, #946B08 100%) 0% 0% no-repeat;
+    border: 0px;
+}
+
+.container > .form-panel > form > .button-login:active
+{
+    background: transparent linear-gradient(110deg, #443309 0%, #946B08 100%) 0% 0% no-repeat;
+    border: 0px;
+    box-shadow: inset 0vmax 0.2vmax 0.4vmax #000000;
+}
+
+.container > .form-panel > form > .parting
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container > .form-panel > form > .parting > .line
+{
+    height: 0;
+    width: 40%;
+    border: 0.1px solid #FFFFFF;
+}
+
+.container > .form-panel > form > .parting > .text
+{
+    font: normal normal normal 2vmax Segoe UI;
+    color: #FFFFFF;
+    text-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
+}
+.container > .form-panel > form > .button-new-account
+{
+    height: 10vh;
+    width: 60%;
+    background: transparent linear-gradient(77deg, #B78F31 0%, #C3A45C 41%, #D5C49C 100%) 0% 0% no-repeat padding-box;
+    border: 0.1vmax solid #707070;
+    border-radius: 3vmax;
+    font: normal normal normal 1.4vmax Segoe UI;
+    color: #FFFFFF;
+    text-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
+    margin-top: 3vh;
+}
+
+.container > .form-panel > form > .button-new-account:hover {
+    background: transparent linear-gradient(110deg, #443309 0%, #946B08 100%) 0% 0% no-repeat;
+    border: 0;
+}
+
+.container > .form-panel > form > .button-new-account:active
+{
+    background: transparent linear-gradient(110deg, #443309 0%, #946B08 100%) 0% 0% no-repeat;
+    border: 0px;
+    box-shadow: inset 0vmax 0.2vmax 0.4vmax #000000;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .container > .form-panel > form > .button-login 
+    {
+        height: 6vh;
+        font: normal normal normal 1.8vmax Segoe UI;
+    }
+
+    .container > .form-panel > form > .button-new-account 
+    {
+        height: 6vh;
+        font: normal normal normal 1.8vmax Segoe UI;
+    }
+}

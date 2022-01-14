@@ -1,0 +1,144 @@
+body
+{
+    margin: 0;
+    background-attachment: fixed;
+}
+
+.container
+{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: url('../img/background.svg');
+    background-size: cover;
+    margin: -5px;
+    padding: 5px;
+}
+
+.container > .form-panel 
+{
+    width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(0.5vmax) brightness(84%) contrast(115%);
+}
+
+.container > .form-panel > .logo
+{
+    width: 90%;
+    padding-top: 4vh;
+    padding-bottom: 15vh;
+}
+
+.container > .form-panel > form
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container > .form-panel > form > .username
+{
+    height: 10vh;
+    width: 60%;
+    margin-bottom: 2vh;
+    background: #F8EFDA 0% 0% no-repeat padding-box;
+    box-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
+    border-radius: 1vmax;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+}
+
+.container > .form-panel > form > .username > .icon
+{
+    height: 2vmax;
+    width: 2vmax;
+}
+
+.container > .form-panel > form > .username > input
+{
+    height: 100%;
+    width: 70%;
+    font: normal normal normal 1.4vmax Segoe UI;
+    margin-left: 1vw;
+    background: none;
+    padding-left:0.5vw;
+    border: none;
+}
+
+.container > .form-panel > form > .password
+{
+    height: 10vh;
+    width: 60%;
+    margin-bottom: 2vh;
+    background: #F8EFDA 0% 0% no-repeat padding-box;
+    box-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
+    border-radius: 1vmax;
+    display: flex;
+    align-items: center;
+    padding-left: 1vw;
+    margin-bottom: 2vh;
+}
+
+.container > .form-panel > form > .password > .icon
+{
+    height: 2vmax;
+    width: 2vmax;
+}
+
+.container > .form-panel > form > .password > input
+{
+    height: 100%;
+    width: 70%;
+    font: normal normal normal 1.4vmax Segoe UI;
+    margin-left: 1vw;
+    background: none;
+    padding-left:0.5vw;
+    border: none;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .container > .form-panel 
+    {
+        width: 100%;
+    }
+
+    .container > .form-panel > .logo 
+    {
+        padding-top: 11vh;
+        padding-bottom: 30vh;
+    }
+
+    .container > .form-panel > form > .password
+    {
+        height: 7vh;
+        border-radius: 2vmax;
+
+    }
+
+    .container > .form-panel > form > .username 
+    {
+        height: 7vh;
+        border-radius: 2vmax;
+    }
+
+    .container > .form-panel > form > .username > input 
+    {
+        font: normal normal normal 2vmax Segoe UI;
+    }
+
+    .container > .form-panel > form > .password > input 
+    {
+        font: normal normal normal 2vmax Segoe UI;
+    }
+
+    .container > .form-panel > form > div > .icon 
+    {
+        width: 3vmax;
+    }
+}

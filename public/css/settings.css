@@ -1,0 +1,259 @@
+.container
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.container > .main-panel
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container > .main-panel > .text
+{
+    margin-top: 9.1vh;
+    font: normal normal bold 2vmax Segoe UI;
+    color: #FFFFFF;
+    text-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
+}
+
+.container > .main-panel > .parting
+{
+    margin-top: 1.5vh;
+    margin-left: -6vw;
+    width: 75vw;
+    border-bottom: 0.2vmax solid #FFFFFF;
+}
+.container > .main-panel > .info
+{
+    width: 70vw;
+    height: 39vh;
+    display: flex;
+    margin-left: -6vw;
+}
+
+.container > .main-panel > .info > .avatar
+{
+    width: 17.5vw;
+    height: 35vh;
+    background: #F8EFDA;
+    border: 0.3vmax solid #F8EFDA;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.container > .main-panel > .info > .avatar > .placeholder
+{
+    width: 20vw;
+    height: 10vh;
+}
+
+.container > .main-panel > .info > .fields-names
+{
+    width: 17.5vw;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    margin-top: 5vh;
+    margin-left: 3vw;
+}
+
+.container > .main-panel > .info > .fields-names > div
+{
+    font: normal normal bold 4.5vmin Segoe UI;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+    text-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
+}
+
+.container > .main-panel > .info > .fields-values
+{
+    width: 35vw;
+    height: 31vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container > .main-panel > .info > .fields-values > div
+{
+    height: 6.5vh;
+    display: flex;
+    background: #F8EFDA 0% 0% no-repeat padding-box;
+    border: 0.1vmax solid #707070;
+    border-radius: 1vmax;
+    margin-left: 1.5vw;
+}
+
+.container > .main-panel > .info > .fields-values > div > .value
+{
+    width: 40vw;
+    align-self: center;
+    font: normal normal normal 1.5vmax Segoe UI;
+    color: #000000;
+    text-shadow: 0vmax 0.2vmax 0.4vmax #0000004D;
+    padding-left: 1vw;
+}
+
+.container > .main-panel > .info > .fields-values > div > .overwrite-button
+{
+    margin: none;
+    padding: none;
+    background: none;
+    border: none;
+}
+
+.container > .main-panel > .info > .fields-values > div > .overwrite-button > .icon
+{
+    padding-right: 0.5vw;
+    padding-top: 0.4vh;
+    height: 6vh;
+    width: 3vw;
+}
+
+.container > .main-panel > .buttons
+{
+    width: 75vw;
+    height: 30vh;
+    display: flex;
+    margin-top: 5vh;
+    margin-left: -1vw;
+}
+
+.container > .main-panel > .buttons > .options
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.container > .main-panel > .buttons > .options > button
+{
+    width: 20vw;
+    height: 8vh;
+    background: #FFE19E 0% 0% no-repeat padding-box;
+    border-radius: 3vmax;
+    font: normal normal bold 2vmax Segoe UI;
+    color: #000000;
+    text-shadow: 0vmax 0.2vmax 0.4vmax #0000004D;
+    margin-top: 2vh;
+}
+
+.container > .main-panel > .buttons > .options > .change-password
+{
+    border: 0.3vmax solid #362600;
+}
+
+.container > .main-panel > .buttons > .options > .delete-account
+{
+    border: 0.3vmax solid #FF0000;
+}
+
+.container > .main-panel > .buttons > .save
+{
+    width: 12vw;
+    height: 11vh;
+    background: transparent linear-gradient(113deg, #825B01 0%, #C68D05 100%) 0% 0% no-repeat padding-box;
+    border: 0.1vmax solid #707070;
+    border-radius: 3vmax;
+    margin-left: 38vw;
+    align-self: end;
+    font: normal normal normal 2vmax Segoe UI;
+    color: #FFFFFF;
+    text-shadow: 0vmax 0.2vmax 0.4vmax #00000080; 
+}
+
+@media only screen and (max-device-width: 420px) {
+    .container > .main-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 11vh;
+        padding-bottom: 2vh;
+    }
+
+    .container > .main-panel > .text {
+        margin-top: 2.5vh;
+        font: normal normal bold 3.5vmax Segoe UI;
+    }
+
+    .container > .main-panel > .parting {
+        margin-top: 1vh;
+        margin-left: -1vw;
+        width: 95vw;
+    }
+
+    .container > .main-panel > .info {
+        margin-top: 4.7vh;
+        width: 93vw;
+        margin-left:2vw;
+        margin-bottom: 17vh;
+    }
+
+    .container > .main-panel > .info > .avatar {
+        position: absolute;
+        width: 60vw;
+        height: 30vh;
+        margin-left: 18.5vw;
+        margin-top: 0;
+    }
+
+    .container > .main-panel > .info > .fields-names {
+        height: 16vh;
+        margin-top: 35vh;
+        margin-left: 3vw;
+    }
+
+    .container > .main-panel > .info > .fields-values {
+        height: 16vh;
+        width: 90vw;
+        margin-top: 35vh;
+        margin-left: 1vw;
+    }
+    
+    .container > .main-panel > .info > .fields-values > div {
+        padding-left: 1vw;
+        height: 3.5vh;
+        border-radius: 2vmax;
+    }
+
+    .container > .main-panel > .info > .fields-values > div > .value {
+        margin-top: 1vh;
+        width: 60vw;
+        height: 100%;
+    }
+
+    .container > .main-panel > .info > .fields-values > div > .overwrite-button > .icon {
+        padding-right: 0.5vw;
+        padding-top: 0.4vh;
+        height: 3vh;
+        width: 6vw;
+    }
+
+    .container > .main-panel > .buttons {
+        margin-bottom: 2vh;
+        height: 11vh;
+        width: 93vw;
+    }
+
+    .container > .main-panel > .buttons > .options > button {
+        width: 40vw;
+        height: 4vh;
+        margin-top: 1vh;
+    }
+
+    .container > .main-panel > .buttons > .save {
+        width: 23vw;
+        height: 5vh;
+        margin-left: 30vw;
+    }
+}

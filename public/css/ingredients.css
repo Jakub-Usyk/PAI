@@ -1,0 +1,314 @@
+.container > .main-panel > .search-bar
+{
+    margin-top: 4vh;
+    margin-left: 6vw;
+    height: 9vh;
+    width: 75vw;
+    display: flex;
+    align-items: center;
+
+    background: #F8EFDA 0% 0% no-repeat padding-box;
+    border: 0.01vmax solid #707070;
+    border-radius: 1vmax;
+}
+
+.container > .main-panel > .search-bar > .icon
+{
+    margin-left: 1vw;
+    height: 60%;
+    width: 3vw;
+}
+
+.container > .main-panel > .search-bar > input
+{
+    height: 5vh;
+    width: 95%;
+    font: normal normal normal 1.8vmax Segoe UI;
+    margin-left:0.5vw;
+    background: none;
+    padding-left:0.5vw;
+    border: none;
+}
+
+.container > .main-panel > .parting
+{
+    margin-top: 3vh;
+    margin-left: 6vw;
+    width: 75vw;
+    border-bottom: 0.2vmax solid #FFFFFF;
+}
+
+.container > .main-panel > .categories
+{
+    margin-top: 3vh;
+    margin-left: 6vw;
+    height: 100%;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.container > .main-panel > .categories > div
+{
+    margin-bottom: 3vh;
+    height: auto;
+    width: 100%;
+    border-radius: 1vmax;
+    background:#F8EFDA;
+    display: flex;
+    flex-direction: column;
+    border: 0.1vmax solid #707070;;
+}
+
+.container > .main-panel > .categories > div > .heading
+{
+    padding-top: 1vmax;
+    padding-bottom: 1vmax;
+    height: 5vh;
+    width: 100%;
+    border-radius: 1vmax 1vmax 0 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 0.1vmax solid #707070;
+}
+
+.container > .main-panel > .categories > div > .heading > .name
+{
+    width: 95%;
+    display: flex;
+    align-items: center;
+}
+.container > .main-panel > .categories > div > .heading > .name > .text
+{
+    font: normal normal bold 2.3vmax/3.4vmax Segoe UI;
+    color: #2D2D2D;
+    padding-left: 1vw;
+}
+
+.container > .main-panel > .categories > div > .heading > .name > img
+{
+    height: 8vh;
+    width: 8vw;
+    margin-left: -1.5vw;
+}
+
+.container > .main-panel > .categories > div > .ingredients
+{
+    height: auto;
+    width: auto;
+    border-radius: 0 0 1vmax 1vmax;
+    margin: 0.5em;
+}
+
+.container > .main-panel > .categories > div > .ingredients > button 
+{
+    height: 4vh;
+    display: inline;
+    background: #FFFFFF;
+    border: 0.1vmax solid #92908B;
+    font: normal normal bold 1.2vw/1.5vh Segoe UI;
+    border-radius: 3vmax;
+    padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    margin-left: 0.3vw;
+}
+
+.container > .main-panel > .categories > div > .ingredients > .add > img
+{
+    height: 2vh;
+    width: 2vw;
+}
+.container > .main-panel > .categories > div > .heading > button
+{
+    height: 6vh;
+    width: 2.9vw;
+    font-size: 3vmax;
+    border: 0.2vmax solid #2D2D2D;
+    border-radius: 100%;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container > .main-panel > .categories > div > .heading > button > img
+{
+    width: 2vmax;
+}
+
+.container > .main-panel > .new-category
+{
+    margin-left: 6vw;
+    height: 8vh;
+    width: 75vw;
+    border-radius: 1vmax;
+    background:#F8EFDA;
+    border: 0.1vmax solid #707070;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6vh;
+}
+
+.container > .main-panel > .new-category > img
+{
+    margin-left: 1vw;
+    height: 5vh;
+}
+
+.container > .main-panel > .new-category > .text
+{
+    padding-left: 1vw;
+    font: normal normal bold 2.3vmax/3.4vmax Segoe UI;
+    color: #2D2D2D;
+}
+
+.container > .main-panel > .show-results
+{
+    margin-left: 56vw;
+    margin-bottom: 6vh;
+    height: 10vh;
+    width: 25vw;
+    background: transparent linear-gradient(102deg, #825B01 0%, #C68D05 100%) 0% 0% no-repeat padding-box;
+    border: 0.1vmax solid #707070;
+    border-radius: 3vmax;
+}
+.container > .main-panel > .show-results > .text
+{
+    font: normal normal normal 1.7vmax Segoe UI;
+    color: #FFFFFF;
+    text-shadow: 0px 3px 6px #00000080;
+}
+
+.container > .main-panel > .show-results:hover {
+    background: transparent linear-gradient(110deg, #443309 0%, #946B08 100%) 0% 0% no-repeat;
+    border: 0;
+}
+
+.container > .main-panel > .show-results:active
+{
+    background: transparent linear-gradient(110deg, #443309 0%, #946B08 100%) 0% 0% no-repeat;
+    border: 0px;
+    box-shadow: inset 0vmax 0.2vmax 0.4vmax #000000;
+}
+
+@media only screen and (max-device-width: 420px) {
+    .container > .main-panel > .search-bar 
+    {
+        height: 4vh;
+        border-radius: 2vmax;
+    }
+
+    .container > .main-panel > .search-bar 
+    {
+        margin-top: 2vh;
+        margin-left: 2vw;
+        width: 95vw;
+    }
+
+    .container > .main-panel > .search-bar > .icon 
+    {
+        margin-left: 3vw;
+        width: 5vw;
+    }
+
+    .container > .main-panel > .search-bar > input 
+    {
+        font: normal normal normal 2vmax Segoe UI;
+    }
+
+    .container > .main-panel > .parting 
+    {
+        margin-top: 2vh;
+        margin-left: 2vw;
+        width: 95vw;
+    }
+
+    .container > .main-panel > .categories 
+    {
+        margin-top: 2vh;
+        width: 95vw;
+        margin-left: 2vw;
+    }
+
+    .container > .main-panel > .categories > div 
+    {
+        margin-bottom: 2vh;
+        border-radius: 2vmax;
+    }
+
+    .container > .main-panel > .categories > div > .heading 
+    {
+        padding: 0;
+    }
+
+    .container > .main-panel > .categories > div > .heading > .name > .text 
+    {
+        padding-left: 2vw;
+    }
+
+    .container > .main-panel > .categories > div > .heading > .name > img 
+    {
+        margin-left: 1.5vw;
+    }
+
+    .container > .main-panel > .categories > div > .heading > .name 
+    {
+        width: 90%;
+    }
+
+    .container > .main-panel > .categories > div > .heading > button 
+    {
+        height: 3vh;
+        width: 6vw;
+    }
+    
+    .container > .main-panel > .categories > div > .ingredients
+    {
+        margin: 1em;
+    }
+
+    .container > .main-panel > .categories > div > .ingredients > button 
+    {
+        height: 2vh;
+        font: normal normal bold 1.5vmax Segoe UI;
+        padding-left: 1.5vw;
+        padding-right: 1.5vw;
+        padding-bottom: 2.2vh;
+        margin-bottom: 0.7vh;
+        margin-left: 0.5vw;
+    }
+
+    .container > .main-panel > .categories > div > .ingredients > .add > img 
+    {
+        height: 1vh;
+    }
+
+    .container > .main-panel > .new-category 
+    {
+        width: 95vw;
+        height: 4vh;
+        margin-left: 2vw;
+        border-radius: 2vmax;
+        margin-bottom: 4vh;
+    }
+
+    .container > .main-panel > .new-category > img 
+    {
+        margin-left: 2vw;
+        height: 2vh;
+    }
+
+    .container > .main-panel > .new-category > .text 
+    {
+        padding-left: 2vw;
+        padding-bottom: 0.3vh;
+    }
+
+    .container > .main-panel > .show-results 
+    {
+        margin-left: 48vw;
+        margin-bottom: 14vh;
+        height: 5vh;
+        width: 49vw;
+    }
+}
