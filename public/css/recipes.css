@@ -1,3 +1,8 @@
+.container > .main-panel
+{
+    min-height: 10vh;
+}
+
 .container > .main-panel > .search-bar
 {
     margin-top: 4vh;
@@ -42,23 +47,23 @@
     margin-top: 6vmin;
     margin-left: 6vw;
     height: 100%;
+    min-height: 33.8vh;
     width: 75vw;
     display: grid;
     column-gap: 6vmin;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 43.6vh;
+    margin-bottom: 45.4vh;
 }
 
 .container > .main-panel > .recipes > .recipe
 {
     border: 0;
     padding: 0;
-    height: 90%;
+    height: 40vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     border-radius: 3vmax 3vmax 0 0;
-    margin-bottom: 6vmin;
     background: none;
 }
 
@@ -72,7 +77,7 @@
 
 .container > .main-panel > .recipes > .recipe > .description
 {
-    height: 100%;
+    height: 40%;
     width: 97.5%;
     display: flex;
     flex-direction: column;
@@ -99,6 +104,7 @@
 {
     height: 3vh;
     width: 1.2vw;
+    margin-left: 6vw;
 }
 
 .container > .main-panel > .recipes > .recipe > .description > .heading > .text
@@ -113,6 +119,7 @@
 .container > .main-panel > .recipes > .recipe > .description > .body
 {
     display: flex;
+    margin-bottom: -13vh;
 }
 
 .container > .main-panel > .recipes > .recipe > .description > .body > .used-ingredients
@@ -161,7 +168,7 @@
 {
     border: 0;
     padding: 0;
-    height: 90%;
+    height: 40vh;
     width: 100%;
     border-radius: 3vmax;
     background: #F8EFDA 0% 0% no-repeat padding-box;
@@ -270,7 +277,16 @@
         margin-bottom: 41.9vmin;
     }
 
-    .container > .main-panel > .recipes > .recipe > .description > .body > .details {
-
+    .container > .main-panel > .recipes
+    {
+        margin-top: 6vmin;
+        margin-left: 6vw;
+        height: 100%;
+        min-height: 33.8vh;
+        width: 75vw;
+        display: grid;
+        column-gap: 6vmin;
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 37.4vh;
     }
 }

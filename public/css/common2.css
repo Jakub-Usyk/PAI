@@ -26,8 +26,8 @@ body
 
 .container > .navi-bar > .avatar
 {
-    width: 5vw;
-    height: 10vh;
+    width: 4.5vw;
+    height: 9vh;
     background: #F8EFDA;
     border: 0.3vmax solid #F8EFDA;
     border-radius: 100%;
@@ -39,8 +39,8 @@ body
 
 .container > .navi-bar > .avatar > .placeholder
 {
-    width: 5vw;
-    height: 5vh;
+    width: 3.5vw;
+    height: 3.5vh;
 }
 .container > .navi-bar > .ingr-select
 {
@@ -56,15 +56,15 @@ body
 .container > .navi-bar > .ingr-select > .ingr-icon
 {
     padding-left: 1vw;
-    width: 8vw;
-    height: 8vh;
+    width: 7vw;
+    height: 7vh;
 }
 
 .container > .navi-bar > .ingr-select > .text
 {
     padding-top: 5%;
     text-align: center;
-    font: normal normal normal 1.2vmax Segoe UI;
+    font: normal normal normal 1vmax Segoe UI;
     color: #FFFFFF;
     text-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
 }
@@ -82,22 +82,22 @@ body
 
 .container > .navi-bar > .recipes > .recipes-icon
 {
-    width: 8vw;
-    height: 8vh;
+    width: 7vw;
+    height: 7vh;
 }
 
 .container > .navi-bar > .recipes > .text
 {
     padding-top: 5%;
     text-align: center;
-    font: normal normal normal 1.2vmax Segoe UI;
+    font: normal normal normal 1vmax Segoe UI;
     color: #FFFFFF;
     text-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
 }
 
 .container > .navi-bar > .settings
 {
-    margin-top: 17vh;
+    margin-top: 27vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -108,15 +108,15 @@ body
 
 .container > .navi-bar > .settings > .settings-icon
 {
-    width: 8vw;
-    height: 8vh;
+    width: 7vw;
+    height: 7vh;
 }
 
 .container > .navi-bar > .settings > .text
 {
     padding-top: 5%;
     text-align: center;
-    font: normal normal normal 1.2vmax Segoe UI;
+    font: normal normal normal 1vmax Segoe UI;
     color: #FFFFFF;
     text-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
 }
@@ -134,15 +134,15 @@ body
 
 .container > .navi-bar > .logout > .logout-icon
 {
-    width: 8vw;
-    height: 8vh;
+    width: 7vw;
+    height: 7vh;
 }
 
 .container > .navi-bar > .logout > .text
 {
     padding-top: 5%;
     text-align: center;
-    font: normal normal normal 1.2vmax Segoe UI;
+    font: normal normal normal 1vmax Segoe UI;
     color: #FFFFFF;
     text-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
 }
@@ -254,6 +254,10 @@ body
     .container > .navi-bar > .logout > .text {
         padding: 0;
         font: normal normal normal 1.4vmax Segoe UI;
+    }
+
+    .container > .main-panel > .recipe-form {
+        margin-bottom: 52vh;
     }
     
 }

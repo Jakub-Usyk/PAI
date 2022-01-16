@@ -9,25 +9,25 @@
 <body>
     <div class="container">
         <div class="navi-bar">
-            <button class="avatar">
+            <a class="avatar" href="settings">
                 <img class="placeholder" src="public/img/avatar-placeholder.svg"></img>
-            </button>
-            <button class="ingr-select">
+            </a>
+            <a class="ingr-select" href="select_ingr">
                 <img class="ingr-icon" src="public/img/ingredients.svg"></img>
                 <div class="text">Select ingredients</div>
-            </button>
-            <button class="recipes">
+            </a>
+            <a class="recipes" href="recipes">
                 <img class="recipes-icon" src="public/img/recipes.svg"></img>
                 <div class="text">My recipes</div>
-            </button>
-            <button class="settings">
+            </a>
+            <a class="settings" href="settings">
                 <img class="settings-icon" src="public/img/settings.svg"></img>
                 <div class="text">Settings</div>
-            </button>
-            <button class="logout">
+            </a>
+            <a class="logout" href="login">
                 <img class="logout-icon" src="public/img/logout.svg"></img>
                 <div class="text">Logout</div>
-            </button>
+            </a>
         </div>
         <div class="main-panel">
             <div class="search-bar">

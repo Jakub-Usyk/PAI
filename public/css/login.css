@@ -53,10 +53,17 @@
     background: transparent linear-gradient(77deg, #B78F31 0%, #C3A45C 41%, #D5C49C 100%) 0% 0% no-repeat padding-box;
     border: 0.1vmax solid #707070;
     border-radius: 3vmax;
-    font: normal normal normal 1.4vmax Segoe UI;
+    font: normal normal normal 1.6vmax Segoe UI;
     color: #FFFFFF;
     text-shadow: 0vmax 0.2vmax 0.4vmax #00000080;
     margin-top: 3vh;
+    text-decoration: none;
+}
+
+.container > .form-panel > form > .button-new-account > .text
+{
+    padding-top: 2.8vh;
+    padding-left: 1.5vw;
 }
 
 .container > .form-panel > form > .button-new-account:hover {

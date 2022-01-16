@@ -22,8 +22,8 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['User with such username does not exist!']]);
         }
 
-        if (strcmp($user->getPassword(), $password) != 0 && strcmp($user->getUsername(), $username) != 0) {
-            return $this->render('login', ['messages' => ['Wrong password!']]);
+        if (strcmp($user->getUsername(), $username) != 0 || strcmp($user->getPassword(), $password) != 0) {
+            return $this->render('login', ['messages' => ['Wrong username or password!']]);
         }
 
         return $this->render('select_ingr');

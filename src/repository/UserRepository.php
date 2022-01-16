@@ -8,7 +8,9 @@ class UserRepository extends Repository
     public function getUser(string $username): ?User
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.users WHERE username = :username
+            SELECT * FROM public.users
+            JOIN public.users_details ON users."ID_users_details" = users_details."ID_users_details"
+            WHERE username = :username
         ');
 
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);

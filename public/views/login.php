@@ -30,7 +30,9 @@
                     <div class="text">OR</div>
                     <div class="line"></div>
                 </div>
-                <button class="button-new-account">CREATE NEW ACCOUNT</button>
+                <a class="button-new-account" href="new_account">
+                    <div class="text">CREATE NEW ACCOUNT</div>
+                </a>
             </form>
         </div>
     </div>
