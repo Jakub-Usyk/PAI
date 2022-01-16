@@ -8,7 +8,12 @@
     <div class="container">
         <div class="form-panel">
             <img class="logo" src="public/img/logo.svg"></img>
-            <form>
+            <form action="new_account" method="POST" ENCTYPE="multipart/form-data">
+                <?php if(isset($messages)) {
+                    foreach ($messages as $message) {
+                        echo $message;
+                    }
+                }?>
                 <div class="username">
                     <img class="icon" src="public/img/username.svg"></img>
                     <input name="username" type="text" placeholder="USERNAME..."></input>
@@ -19,13 +24,13 @@
                 </div>
                 <div class="password-retype">
                     <img class="icon" src="public/img/retype.svg">
-                    <input name="password-retype" type="password" placeholder="RE-TYPE PASSWORD..."></input>
+                    <input name="password_retype" type="password" placeholder="RE-TYPE PASSWORD..."></input>
                 </div>
                 <div class="email">
                     <img class="icon" src="public/img/email.svg">
-                    <input name="password" type="text" placeholder="EMAIL..."></input>
+                    <input name="email" type="text" placeholder="EMAIL..."></input>
                 </div>
-                <button class="button-register">REGISTER</button>
+                <button class="button-register" type="submit">REGISTER</button>
             </form>
         </div>
     </div>

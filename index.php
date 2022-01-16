@@ -10,7 +10,9 @@ Routing::get('new_account', 'DefaultController');
 Routing::get('recipes', 'DefaultController');
 Routing::get('select_ingr', 'DefaultController');
 Routing::get('settings', 'DefaultController');
+
 Routing::post('login', 'SecurityController');
+Routing::post('new_account', 'SecurityController');
 Routing::post('add_recipe', 'RecipeController');
 
 Routing::run($path);
