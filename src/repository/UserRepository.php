@@ -68,6 +68,7 @@ class UserRepository extends Repository
             ]);
 
             return "User created successfully";
+
         } catch (PDOException $e) {
             return $e->getMessage();
         }
