@@ -10,29 +10,31 @@
     <div class="container" style="height: 100vh">
         <div class="navi-bar">
             <a class="avatar" href="settings">
-                <img class="placeholder" src="public/img/avatar-placeholder.svg"></img>
+                <img class="placeholder" src="public/img/avatar-placeholder.svg"/>
             </a>
             <a class="ingr-select" href="select_ingr">
-                <img class="ingr-icon" src="public/img/ingredients.svg"></img>
+                <img class="ingr-icon" src="public/img/ingredients.svg"/>
                 <div class="text">Select ingredients</div>
             </a>
             <a class="recipes" href="recipes">
-                <img class="recipes-icon" src="public/img/recipes.svg"></img>
+                <img class="recipes-icon" src="public/img/recipes.svg"/>
                 <div class="text">My recipes</div>
             </a>
             <a class="settings" href="settings">
-                <img class="settings-icon" src="public/img/settings.svg"></img>
+                <img class="settings-icon" src="public/img/settings.svg"/>
                 <div class="text">Settings</div>
             </a>
-            <a class="logout" href="login">
-                <img class="logout-icon" src="public/img/logout.svg"></img>
-                <div class="text">Logout</div>
-            </a>
+            <form class="logout-form" action="logout" method="POST">
+                <button class="logout" type="submit">
+                    <img class="logout-icon" src="public/img/logout.svg"/>
+                    <div class="text">Logout</div>
+                </button>
+            </form>
         </div>
         <div class="main-panel">
             <div class="search-bar">
                 <img class="icon" src="public/img/search.svg">
-                <input name="search" type="text" placeholder="SEARCH FOR RECIPE..."></input>
+                <input name="search" type="text" placeholder="SEARCH FOR RECIPE..."/>
             </div>
             <div class="parting"></div>
             <div class="recipe-form">

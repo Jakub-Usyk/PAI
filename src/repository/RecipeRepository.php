@@ -5,27 +5,33 @@ require_once __DIR__ . '/../models/Recipe.php';
 
 class RecipeRepository extends Repository
 {
-    public function getRecipe(int $id): ?Recipe
+    public function getRecipes()
     {
         $stmt = $this->database->connect()->prepare('
-            SELECT * FROM public.recipes WHERE id = :id
+            SELECT * FROM public.recipes WHERE "ID_users" = :id
         ');
 
-        $stmt->bindParam(':username', $id, PDO::PARAM_INT);
+        $id = $_COOKIE['user_ID'];
+        $stmt->bindParam(':id', $id);
         $stmt->execute();
 
-        $recipe = $stmt->fetch(PDO::FETCH_ASSOC);
+        $fetchedRecipes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        if ($recipe == false) {
+        if ($fetchedRecipes == false) {
             return null;
         }
 
-        return new Recipe(
-            $recipe['title'],
-            $recipe['description'],
-            $recipe['prepareTime'],
-            $recipe['image']
-        );
+        $allRecipes = [];
+        foreach ($fetchedRecipes as $recipe) {
+            array_push($allRecipes, new Recipe(
+                $recipe['title'],
+                $recipe['description'],
+                $recipe['prepare_time'],
+                $recipe['image']
+            ));
+        }
+
+        return $allRecipes;
     }
 
     public function addRecipe(Recipe $recipe): void {
@@ -34,7 +40,8 @@ class RecipeRepository extends Repository
             VALUES (?, ?, ?, ?, ?)
         ');
 
-        $userID = 1;
+
+        $userID = $_COOKIE['user_ID'];
         $stmt->execute([
             $recipe->getTitle(),
             $recipe->getDescription(),

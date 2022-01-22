@@ -6,13 +6,14 @@ require_once __DIR__.'/../repository/UserRepository.php';
 
 class SecurityController extends AppController
 {
-
+    private $cookieName;
     private UserRepository $userRepository;
 
     public function __construct()
     {
         parent::__construct();
         $this->userRepository = new UserRepository();
+        $this->cookieName = 'user_ID';
     }
 
     public function login() {
@@ -33,6 +34,12 @@ class SecurityController extends AppController
 
         if (strcmp($user->getUsername(), $username) != 0 || strcmp($user->getPassword(), $password) != 0) {
             return $this->render('login', ['messages' => ['Wrong username or password!']]);
+        }
+
+        $id_user = $this->userRepository->getUserID($_POST['username']);
+
+        if(!isset($_COOKIE[$this->cookieName])){
+            setCookie($this->cookieName, $id_user, time() + (24*3600), "/");
         }
 
         return $this->render('select_ingr');
@@ -66,5 +73,13 @@ class SecurityController extends AppController
         }
 
         return $this->render('login', ['messages' => [$message]]);
+    }
+
+    public function logout()
+    {
+        if (isset($_COOKIE['user_ID'])) {
+            setcookie('user_ID', '', time() - (24*3600), "/");
+        }
+        return $this->render('login');
     }
 }

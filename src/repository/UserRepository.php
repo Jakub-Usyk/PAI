@@ -39,9 +39,7 @@ class UserRepository extends Repository
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
         $stmt->execute();
 
-        $salt = $stmt->fetch( PDO::FETCH_COLUMN);
-
-        return $salt;
+        return $stmt->fetch( PDO::FETCH_COLUMN);
     }
 
     public function addUser(User $user, string $salt): string {
@@ -72,5 +70,16 @@ class UserRepository extends Repository
         } catch (PDOException $e) {
             return $e->getMessage();
         }
+    }
+
+    public function getUserID($username) {
+        $stmt = $this->database->connect()->prepare('
+            SELECT "ID_users" FROM users WHERE users.username = :username
+        ');
+
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetch( PDO::FETCH_COLUMN);
     }
 }

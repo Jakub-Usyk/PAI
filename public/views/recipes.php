@@ -24,10 +24,12 @@
                 <img class="settings-icon" src="public/img/settings.svg"></img>
                 <div class="text">Settings</div>
             </a>
-            <a class="logout" href="login">
-                <img class="logout-icon" src="public/img/logout.svg"></img>
-                <div class="text">Logout</div>
-            </a>
+            <form class="logout-form" action="logout" method="POST">
+                <button class="logout" type="submit">
+                    <img class="logout-icon" src="public/img/logout.svg"></img>
+                    <div class="text">Logout</div>
+                </button>
+            </form>
         </div>
         <div class="main-panel">
             <div class="search-bar">
@@ -35,30 +37,38 @@
                 <input name="search" type="text" placeholder="SEARCH FOR RECIPE..."/>
             </div>
             <div class="parting"></div>
-            <div class="recipes">
-                <button class="recipe">
-                    <img class="photo" src="public/uploads/<?= $recipe->getImage() ?>">
-                    <div class="description">
-                        <div class="heading">
-                            <div class="title"><?= $recipe->getTitle() ?></div>
-                            <img class="time" src="public/img/clock.svg">
-                            <div class="text"><?= $recipe->getPrepareTime() ?> minutes</div>
-                        </div>
-                        <div class="body">
-                            <div class="used-ingredients">
-                                <div class="text">Ingredients:</div>
-                                <div class="ingredient">
-                                    <div class="name">tomato</div>
-                                </div>
+            <form class="recipes" action="add_recipe" method="POST">
+                <?php if($allRecipes != null) foreach ($allRecipes as $recipe): ?>
+                    <button class="recipe">
+                        <img class="photo" src="public/uploads/<?= $recipe->getImage() ?>">
+                        <div class="description">
+                            <div class="heading">
+                                <div class="title"><?= $recipe->getTitle() ?></div>
+                                <img class="time" src="public/img/clock.svg">
+                                <div class="text"><?= $recipe->getPrepareTime() ?> minutes</div>
                             </div>
-                            <div class="details">CLICK FOR MORE DETAILS...</div>
+                            <div class="body">
+                                <div class="used-ingredients">
+                                    <div class="text">Ingredients:</div>
+                                    <div class="ingredient">
+                                        <div class="name">not yet set</div>
+                                    </div>
+                                    <div class="ingredient">
+                                        <div class="name">not yet set</div>
+                                    </div>
+                                    <div class="ingredient">
+                                        <div class="name">not yet set</div>
+                                    </div>
+                                </div>
+                                <div class="details">CLICK FOR MORE DETAILS...</div>
+                            </div>
                         </div>
-                    </div>
-                </button>
-                <button class="add-recipe">
+                    </button>
+                <?php endforeach; ?>
+                <button class="add-recipe" type="submit">
                     <img class="icon" src="public/img/plus.svg"/>
                 </button>
-            </div>
+            </form>
         </div>
     </div>
 </body>

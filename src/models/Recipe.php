@@ -2,12 +2,12 @@
 
 class Recipe
 {
-    private $title;
-    private $description;
-    private $prepareTime;
-    private $image;
+    private string $title;
+    private string $description;
+    private int $prepareTime;
+    private string $image;
 
-    public function __construct($title, $description, $prepareTime, $image)
+    public function __construct(string $title, string $description, int $prepareTime, string $image)
     {
         $this->title = $title;
         $this->description = $description;
@@ -35,12 +35,12 @@ class Recipe
         $this->description = $description;
     }
 
-    public function getPrepareTime() : string
+    public function getPrepareTime() : int
     {
         return $this->prepareTime;
     }
 
-    public function setPrepareTime(string $prepareTime)
+    public function setPrepareTime(int $prepareTime)
     {
         $this->prepareTime = $prepareTime;
     }

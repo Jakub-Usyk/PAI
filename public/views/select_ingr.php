@@ -24,10 +24,12 @@
                 <img class="settings-icon" src="public/img/settings.svg"></img>
                 <div class="text">Settings</div>
             </a>
-            <a class="logout" href="login">
-                <img class="logout-icon" src="public/img/logout.svg"></img>
-                <div class="text">Logout</div>
-            </a>
+            <form class="logout-form" action="logout" method="POST">
+                <button class="logout" type="submit">
+                    <img class="logout-icon" src="public/img/logout.svg"></img>
+                    <div class="text">Logout</div>
+                </button>
+            </form>
         </div>
         <div class="main-panel">
             <div class="search-bar">
