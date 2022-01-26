@@ -45,9 +45,15 @@ class UserRepository extends Repository
     public function addUser(User $user, string $salt): string {
 
         $username = $user->getUsername();
+
+        if (!ctype_alpha($username[0])) {
+            return "Wrong username!";
+        }
+
         if ($this->getUser($username) != null) {
             return "User already exists!";
         }
+
         try {
             $stmt = $this->database->connect()->prepare(
                 '

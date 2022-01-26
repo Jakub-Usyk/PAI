@@ -20,7 +20,7 @@
 
 .container > .form-panel > form > .password-retype > input
 {
-    height: 10vh;
+    height: 95%;
     width: 70%;
     font: normal normal normal 1.4vmax Segoe UI;
     margin-left: 1vw;
@@ -51,7 +51,7 @@
 
 .container > .form-panel > form > .email > input
 {
-    height: 10vh;
+    height: 95%;
     width: 70%;
     font: normal normal normal 1.4vmax Segoe UI;
     margin-left: 1vw;

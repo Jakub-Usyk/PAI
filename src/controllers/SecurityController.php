@@ -72,6 +72,11 @@ class SecurityController extends AppController
             return $this->render('new_account', ['messages' => [$message]]);
         }
 
+        if($message == "Wrong username!") {
+            return $this->render('new_account', ['messages' => [$message]]);
+        }
+
+
         return $this->render('login', ['messages' => [$message]]);
     }
 

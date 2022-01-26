@@ -2,6 +2,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/common1.css">
     <link rel="stylesheet" type="text/css" href="public/css/new-account.css">
+    <script type="text/javascript" src="./public/js/script.js" defer></script>
     <title>new account page</title>
 </head>
 <body>
