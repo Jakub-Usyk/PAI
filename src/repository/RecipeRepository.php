@@ -50,4 +50,20 @@ class RecipeRepository extends Repository
             $recipe->getImage()
         ]);
     }
+
+    public function getRecipeByTitle(string $searchString) {
+        $searchString = '%'.strtolower($searchString).'%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM recipes WHERE LOWER(recipes.title) LIKE :search AND recipes."ID_users" = :userID
+        ');
+
+
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->bindParam(':userID', $_COOKIE['user_ID'], PDO::PARAM_STR);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+
 }

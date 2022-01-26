@@ -15,5 +15,6 @@ Routing::post('login', 'SecurityController');
 Routing::post('new_account', 'SecurityController');
 Routing::post('logout', 'SecurityController');
 Routing::post('add_recipe', 'RecipeController');
+Routing::post('search', 'RecipeController');
 
 Routing::run($path);
