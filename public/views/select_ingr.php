@@ -10,10 +10,10 @@
     <div class="container">
         <div class="navi-bar">
             <a class="avatar" href="settings">
-                <?php if ($user->getAvatar() == "")
+                <?php if ($tab['user']->getAvatar() == "")
                     echo "<img class=\"placeholder\" src=\"public/img/new-avatar.svg\">";
                 else
-                    echo "<img class=\"photo\" src=\"public/uploads/".$user->getAvatar()."\">";
+                    echo "<img class=\"photo\" src=\"public/uploads/".$tab['user']->getAvatar()."\">";
                 ?>
             </a>
             <a class="ingr-select" href="select_ingr">
@@ -42,98 +42,21 @@
             </div>
             <div class="parting"></div>
             <div class="categories">
-                <div class="meat">
+                <?php foreach ($tab['allCategories'] as $category): ?>
+                <div class="category">
                     <div class="heading">
                         <div class="name">
-                            <div class="text">Meat</div>
-                            <img class="meat-icon" src="public/img/meat.svg"></img>
+                            <div class="text"><?= $category->getName() ?></div>
+                            <img class="food-icon" src="public/img/<?= $category->getIcon() ?>"/>
                         </div>
-                        <button>
-                            <img class="minus-icon" src="public/img/minus.svg"></img>
-                        </button>
                     </div>
                     <div class="ingredients">
-                        <button class="food">ham</button>
-                        <button class="food">bacon</button>
-                        <button class="food">sausage</button>
-                        <button class="food">chicken breast</button>
-                        <button class="food">beef meet</button>
-                        <button class="add">
-                            <img class="plus-icon" src="public/img/plus.svg"></img>
-                        </button>
+                        <?php foreach ($category->getIngredients() as $ingredient): ?>
+                        <button class="food"><?= $ingredient ?></button>
+                        <?php endforeach; ?>
                     </div>
                 </div>
-                <div class="dairy">
-                    <div class="heading">
-                        <div class="name">
-                            <div class="text">Dairy products, eggs</div>
-                            <img class="meat-icon" src="public/img/dairy.svg"></img>
-                        </div>
-                        <button>
-                            <img class="minus-icon" src="public/img/minus.svg"></img>
-                        </button>
-                    </div>
-                    <div class="ingredients">
-                        <button class="food">milk</button>
-                        <button class="food">eggs</button>
-                        <button class="food">dairy cream</button>
-                        <button class="food">white cheese</button>
-                        <button class="food">cheese</button>
-                        <button class="add">
-                            <img class="plus-icon" src="public/img/plus.svg"></img>
-                        </button>
-                    </div>
-                </div>
-                <div class="vegetables">
-                    <div class="heading">
-                        <div class="name">
-                            <div class="text">Vegetables</div>
-                            <img class="meat-icon" src="public/img/vegetables.svg"></img>
-                        </div>
-                        <button>
-                            <img class="minus-icon" src="public/img/minus.svg"></img>
-                        </button>
-                    </div>
-                    <div class="ingredients">
-                        <button class="food">carrot</button>
-                        <button class="food">potato</button>
-                        <button class="food">cucumber</button>
-                        <button class="food">brocoli</button>
-                        <button class="food">tomato</button>
-                        <button class="food">corn</button>
-                        <button class="food">onion</button>
-                        <button class="food">red pepper</button>
-                        <button class="food">lettuce</button>
-                        <button class="food">garlic</button>
-                        <button class="food">spinach</button>
-                        <button class="add">
-                            <img class="plus-icon" src="public/img/plus.svg"></img>
-                        </button>
-                    </div>
-                </div>
-                <div class="fruits">
-                    <div class="heading">
-                        <div class="name">
-                            <div class="text">Fruits</div>
-                            <img class="meat-icon" src="public/img/fruits.svg"></img>
-                        </div>
-                        <button>
-                            <img class="minus-icon" src="public/img/minus.svg"></img>
-                        </button>
-                    </div>
-                    <div class="ingredients">
-                        <button class="food">apple</button>
-                        <button class="food">orange</button>
-                        <button class="food">banana</button>
-                        <button class="food">pineapple</button>
-                        <button class="food">pear</button>
-                        <button class="food">mango</button>
-                        <button class="food">watermelon</button>
-                        <button class="add">
-                            <img class="plus-icon" src="public/img/plus.svg"></img>
-                        </button>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
             <button class="new-category">
                 <img class="plus-icon" src="public/img/plus.svg"></img>

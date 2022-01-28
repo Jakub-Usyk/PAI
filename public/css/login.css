@@ -90,4 +90,10 @@
         height: 6vh;
         font: normal normal normal 1.8vmax Segoe UI;
     }
+
+    .container > .form-panel > form > .button-new-account > .text
+    {
+        margin-left: 6vw;
+        margin-top: -1vh;
+    }
 }

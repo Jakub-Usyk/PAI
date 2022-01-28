@@ -11,6 +11,7 @@
     <div class="container">
         <div class="navi-bar">
             <a class="avatar" href="settings">
+<!--                --><?php //die(var_dump($tab)) ?>
                 <?php if ($tab['user']->getAvatar() == "")
                     echo "<img class=\"placeholder\" src=\"public/img/new-avatar.svg\">";
                 else

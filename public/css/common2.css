@@ -185,7 +185,7 @@ body
         height: 11vh;
         flex-direction: row;
         justify-content: space-between;
-        position: fixed 20px 20px;
+        position: fixed;
     }
 
     
@@ -215,18 +215,18 @@ body
         font: normal normal normal 1.4vmax Segoe UI;
     }
 
-    .container > .navi-bar > .recipes {
+    .container > .navi-bar > .recipes1 {
         width: 15vw;
         margin-top: 0;
         margin-left: -20vw;
         padding-bottom: 1vh;
     }
 
-    .container > .navi-bar > .recipes > .recipes-icon {
+    .container > .navi-bar > .recipes1 > .recipes-icon {
         width: 12vw;
     }
 
-    .container > .navi-bar > .recipes > .text {
+    .container > .navi-bar > .recipes1 > .text {
         padding: 0;
         margin-top: -1vh;
         font: normal normal normal 1.4vmax Segoe UI;
@@ -248,19 +248,19 @@ body
         font: normal normal normal 1.4vmax Segoe UI;
     }
     
-    .container > .navi-bar > .logout {
+    .container > .navi-bar > form > .logout {
         width: 15vw;
         margin-top: -2vh;
         margin-right: 3vw;
     }
 
-    .container > .navi-bar > .logout > .logout-icon {
+    .container > .navi-bar > form > .logout > .logout-icon {
         width: 12vw;
     }
     button.logout {
         background: none;
     }
-    .container > .navi-bar > .logout > .text {
+    .container > .navi-bar > form > .logout > .text {
         padding: 0;
         font: normal normal normal 1.4vmax Segoe UI;
     }

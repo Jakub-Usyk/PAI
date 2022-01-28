@@ -26,7 +26,6 @@ class RecipeController extends AppController
         $allRecipes = $this->recipeRepository->getRecipes();
         $userID = $_COOKIE['user_ID'];
         $user = $this->userRepository->getUserById($userID);
-//        die(var_dump($allRecipes));
         $tab['allRecipes'] = $allRecipes;
         $tab['user'] = $user;
         $this->render('recipes', ['tab' => $tab]);
@@ -45,7 +44,12 @@ class RecipeController extends AppController
             $this->recipeRepository->addRecipe($recipe);
 
             $allRecipes = $this->recipeRepository->getRecipes();
-            return $this->render('recipes', ['allRecipes' => $allRecipes]);
+            $userID = $_COOKIE['user_ID'];
+            $user = $this->userRepository->getUserById($userID);
+            $tab['allRecipes'] = $allRecipes;
+            $tab['user'] = $user;
+
+            return $this->render('recipes', ['tab' => $tab]);
         }
 
         return $this->render('add_recipe', ['messages' => $this->messages]);

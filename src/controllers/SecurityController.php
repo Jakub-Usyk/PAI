@@ -12,11 +12,13 @@ class SecurityController extends AppController
     const MAX_FILE_SIZE = 1024*1024;
     const SUPPORTED_TYPES = ['image/png', 'img/jpg'];
     const UPLOAD_DIRECTORY = '/../public/uploads/';
+    private CategoryController $categoryController;
 
     public function __construct()
     {
         parent::__construct();
         $this->userRepository = new UserRepository();
+        $this->categoryController = new CategoryController();
         $this->cookieName = 'user_ID';
     }
 
@@ -31,7 +33,6 @@ class SecurityController extends AppController
         $password = md5($_POST['password'] . $salt);
 
         $user = $this->userRepository->getUser($username);
-//        die($username . " + " . $password . "\n" . $user->getUsername() . " + " . $user->getPassword());
         if (!$user) {
             return $this->render('login', ['messages' => ['User with such username does not exist!']]);
         }
@@ -41,12 +42,12 @@ class SecurityController extends AppController
         }
 
         $id_user = $this->userRepository->getUserID($_POST['username']);
-
         if(!isset($_COOKIE[$this->cookieName])){
-            setCookie($this->cookieName, $id_user, time() + (24*3600), "/");
+            setcookie('user_ID', $id_user, time() + (24*3600), "/");
+            $_COOKIE['user_ID'] = $id_user;
         }
 
-        return $this->render('select_ingr');
+        return $this->categoryController->select_ingr();
     }
 
     public function new_account() {
@@ -85,8 +86,8 @@ class SecurityController extends AppController
 
     public function logout()
     {
-        if (isset($_COOKIE['user_ID'])) {
-            setcookie('user_ID', '', time() - (24*3600), "/");
+        if (isset($_COOKIE[$this->cookieName])) {
+            setcookie($this->cookieName, '', time() - (24*3600), "/");
         }
         return $this->render('login');
     }

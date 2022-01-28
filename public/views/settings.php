@@ -18,20 +18,20 @@
                 ?>
             </a>
             <a class="ingr-select" href="select_ingr">
-                <img class="ingr-icon" src="public/img/ingredients.svg"></img>
+                <img class="ingr-icon" src="public/img/ingredients.svg"/>
                 <div class="text">Select ingredients</div>
             </a>
             <a class="recipes" href="recipes">
-                <img class="recipes-icon" src="public/img/recipes.svg"></img>
+                <img class="recipes-icon" src="public/img/recipes.svg"/>
                 <div class="text">My recipes</div>
             </a>
             <a class="settings" href="settings">
-                <img class="settings-icon" src="public/img/settings.svg"></img>
+                <img class="settings-icon" src="public/img/settings.svg"/>
                 <div class="text">Settings</div>
             </a>
             <form class="logout-form" action="logout" method="POST">
                 <button class="logout" type="submit">
-                    <img class="logout-icon" src="public/img/logout.svg"></img>
+                    <img class="logout-icon" src="public/img/logout.svg"/>
                     <div class="text">Logout</div>
                 </button>
             </form>
