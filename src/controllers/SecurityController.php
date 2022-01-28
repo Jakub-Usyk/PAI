@@ -9,6 +9,10 @@ class SecurityController extends AppController
     private $cookieName;
     private UserRepository $userRepository;
 
+    const MAX_FILE_SIZE = 1024*1024;
+    const SUPPORTED_TYPES = ['image/png', 'img/jpg'];
+    const UPLOAD_DIRECTORY = '/../public/uploads/';
+
     public function __construct()
     {
         parent::__construct();
@@ -63,7 +67,7 @@ class SecurityController extends AppController
             $_POST['email'],
             "",
             "",
-            $salt
+            ""
         );
 
         $message = $this->userRepository->addUser($user, $salt);
@@ -76,7 +80,6 @@ class SecurityController extends AppController
             return $this->render('new_account', ['messages' => [$message]]);
         }
 
-
         return $this->render('login', ['messages' => [$message]]);
     }
 
@@ -86,5 +89,42 @@ class SecurityController extends AppController
             setcookie('user_ID', '', time() - (24*3600), "/");
         }
         return $this->render('login');
+    }
+
+    public function settings() {
+        $userID = $_COOKIE['user_ID'];
+        $user = $this->userRepository->getUserById($userID);
+//        die(var_dump($user));
+        $this->render('settings', ['user' => $user]);
+    }
+
+    public function change_avatar()
+    {
+
+        if ($this->isPost() && is_uploaded_file($_FILES['file']['tmp_name']) && $this->validate($_FILES['file'])) {
+            move_uploaded_file(
+                $_FILES['file']['tmp_name'],
+                dirname(__DIR__) . self::UPLOAD_DIRECTORY . $_FILES['file']['name']
+            );
+            $this->userRepository->changeAvatar($_FILES['file']['name']);
+        }
+
+        $userID = $_COOKIE['user_ID'];
+        $user = $this->userRepository->getUserById($userID);
+        $this->render('settings', ['user' => $user]);
+    }
+
+    private function validate(array $file): bool {
+        if($file['size'] > self::MAX_FILE_SIZE) {
+            $this->messages[] = 'File is too large for destination file system!';
+            return false;
+        }
+
+        if(!isset($file['type']) && !in_array($file['type'], self::SUPPORTED_TYPES)) {
+            $this->messages[] = 'File type is not supported!';
+            return false;
+        }
+
+        return true;
     }
 }

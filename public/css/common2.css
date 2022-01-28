@@ -42,6 +42,13 @@ body
     width: 3.5vw;
     height: 3.5vh;
 }
+.container > .navi-bar > .avatar > .photo
+{
+    width: 110%;
+    height: 100%;
+    border: 0.3vmax solid #F8EFDA;
+    border-radius: 100%;
+}
 .container > .navi-bar > .ingr-select
 {
     width: 100%;

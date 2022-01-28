@@ -26,7 +26,8 @@ class UserRepository extends Repository
             $user['password'],
             $user['email'],
             $user['name'],
-            $user['surname']
+            $user['surname'],
+            $user['avatar']
         );
     }
 
@@ -57,8 +58,8 @@ class UserRepository extends Repository
         try {
             $stmt = $this->database->connect()->prepare(
                 '
-                INSERT INTO public.users(username, password, email, name, surname, salt) 
-                VALUES (?, ?, ?, ?, ?, ?)
+                INSERT INTO public.users(username, password, email, name, surname, salt, avatar) 
+                VALUES (?, ?, ?, ?, ?, ?, ?)
             '
             );
 
@@ -68,7 +69,8 @@ class UserRepository extends Repository
                 $user->getEmail(),
                 $user->getName(),
                 $user->getSurname(),
-                $salt
+                $salt,
+                $user->getAvatar()
             ]);
 
             return "User created successfully";
@@ -87,5 +89,47 @@ class UserRepository extends Repository
         $stmt->execute();
 
         return $stmt->fetch( PDO::FETCH_COLUMN);
+    }
+
+    public function getUserById($userID) {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM public.users
+            WHERE "ID_users" = :userID
+        ');
+
+        $stmt->bindParam(':userID', $userID, PDO::PARAM_STR);
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user == false) {
+            return null;
+        }
+
+        return new User(
+            $user['username'],
+            $user['password'],
+            $user['email'],
+            $user['name'],
+            $user['surname'],
+            $user['avatar']
+        );
+    }
+
+    public function changeAvatar($avatar) {
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE public.users 
+            SET avatar = :avatar
+            WHERE "ID_users" = :id;
+        ');
+
+        $stmt->bindParam(':avatar', $avatar, PDO::PARAM_STR);
+        $stmt->bindParam(':id', $_COOKIE['user_ID'], PDO::PARAM_STR);
+        $stmt->execute();
+
+
+        $avatar = $stmt->fetch(PDO::FETCH_ASSOC);
+
     }
 }

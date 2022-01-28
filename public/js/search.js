@@ -38,7 +38,7 @@ function createRecipe(recipe) {
     const title = clone.querySelector(".title");
     title.innerHTML = recipe.title;
     const prepareTime = clone.querySelector(".text"); //34 minuta
-
+    prepareTime.innerHTML = recipe.prepare_time + " minutes";
     // const ing1 = clone.querySelector("#ing1");
     // ing1.innerHTML = recipe.
     // const ing2 = clone.querySelector("#ing2");

@@ -35,7 +35,7 @@
     margin-left: -6vw;
 }
 
-.container > .main-panel > .info > .avatar
+.container > .main-panel > .info > .avatar-form > .avatar
 {
     width: 17.5vw;
     height: 35vh;
@@ -48,10 +48,31 @@
     margin-top: 2vh;
 }
 
-.container > .main-panel > .info > .avatar > .placeholder
+.container > .main-panel > .info > .avatar-form > .avatar
+{
+    width: 17.5vw;
+    height: 35vh;
+    background: #F8EFDA;
+    border: 0.3vmax solid #F8EFDA;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.container > .main-panel > .info > .avatar-form > .avatar > .placeholder
 {
     width: 20vw;
     height: 10vh;
+}
+
+.container > .main-panel > .info > .avatar-form > .avatar > .photo
+{
+    width: 110%;
+    height: 100%;
+    border: 0.3vmax solid #F8EFDA;
+    border-radius: 100%;
 }
 
 .container > .main-panel > .info > .fields-names

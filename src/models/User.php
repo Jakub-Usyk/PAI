@@ -7,14 +7,16 @@ class User
     private $email;
     private $name;
     private $surname;
+    private $avatar;
 
-    public function __construct(string $username, string $password, string $email, string $name, string $surname)
+    public function __construct(string $username, string $password, string $email, string $name, string $surname, string $avatar)
     {
         $this->username = $username;
         $this->password = $password;
         $this->email = $email;
         $this->name = $name;
         $this->surname = $surname;
+        $this->avatar = $avatar;
     }
 
     public function getUsername(): string
@@ -64,6 +66,16 @@ class User
     public function setSurname(string $surname)
     {
         $this->surname = $surname;
+    }
+
+    public function getAvatar(): string
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar(string $avatar)
+    {
+        $this->avatar = $avatar;
     }
 
 

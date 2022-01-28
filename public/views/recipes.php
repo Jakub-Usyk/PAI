@@ -11,13 +11,17 @@
     <div class="container">
         <div class="navi-bar">
             <a class="avatar" href="settings">
-                <img class="placeholder" src="public/img/avatar-placeholder.svg"></img>
+                <?php if ($tab['user']->getAvatar() == "")
+                    echo "<img class=\"placeholder\" src=\"public/img/new-avatar.svg\">";
+                else
+                    echo "<img class=\"photo\" src=\"public/uploads/".$tab['user']->getAvatar()."\">";
+                ?>
             </a>
             <a class="ingr-select" href="select_ingr">
                 <img class="ingr-icon" src="public/img/ingredients.svg"></img>
                 <div class="text">Select ingredients</div>
             </a>
-            <a class="recipesSSSSSSSSSSSS" href="recipes">
+            <a class="recipes1" href="recipes">
                 <img class="recipes-icon" src="public/img/recipes.svg"></img>
                 <div class="text">My recipes</div>
             </a>
@@ -39,7 +43,8 @@
             </div>
             <div class="parting"></div>
             <div class="recipes">
-                <?php if($allRecipes != null) foreach ($allRecipes as $recipe): ?>
+<!--                --><?php //die(var_dump($tab)) ?>
+                <?php if($tab['allRecipes'] != null) foreach ($tab['allRecipes'] as $recipe): ?>
                     <button class="recipe">
                         <img class="photo" src="public/uploads/<?= $recipe->getImage() ?>">
                         <div class="description">
@@ -66,7 +71,7 @@
                         </div>
                     </button>
                 <?php endforeach; ?>
-                <form class="test" action="add_recipe" method="POST">
+                <form class="add-recipe-form" action="add_recipe" method="POST">
                     <button class="add-recipe" type="submit">
                         <img class="icon" src="public/img/plus.svg"/>
                     </button>
@@ -83,7 +88,7 @@
             <div class="heading">
                 <div class="title">title</div>
                 <img class="time" src="public/img/clock.svg">
-                <div class="text">prepareTime</div>
+                <div class="text">temp-text</div>
             </div>
             <div class="body">
                 <div class="used-ingredients">

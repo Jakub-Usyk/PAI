@@ -3,6 +3,7 @@
 require_once 'AppController.php';
 require_once __DIR__.'/../models/Recipe.php';
 require_once __DIR__.'/../repository/RecipeRepository.php';
+require_once __DIR__.'/../repository/UserRepository.php';
 
 class RecipeController extends AppController
 {
@@ -12,17 +13,23 @@ class RecipeController extends AppController
 
     private $messages = [];
     private RecipeRepository $recipeRepository;
+    private UserRepository $userRepository;
 
     public function __construct()
     {
         parent::__construct();
+        $this->userRepository = new UserRepository();
         $this->recipeRepository = new RecipeRepository();
     }
 
     public function recipes() {
         $allRecipes = $this->recipeRepository->getRecipes();
+        $userID = $_COOKIE['user_ID'];
+        $user = $this->userRepository->getUserById($userID);
 //        die(var_dump($allRecipes));
-        $this->render('recipes', ['allRecipes' => $allRecipes]);
+        $tab['allRecipes'] = $allRecipes;
+        $tab['user'] = $user;
+        $this->render('recipes', ['tab' => $tab]);
     }
 
     public function add_recipe() {

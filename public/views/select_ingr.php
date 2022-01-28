@@ -10,7 +10,11 @@
     <div class="container">
         <div class="navi-bar">
             <a class="avatar" href="settings">
-                <img class="placeholder" src="public/img/avatar-placeholder.svg"></img>
+                <?php if ($user->getAvatar() == "")
+                    echo "<img class=\"placeholder\" src=\"public/img/new-avatar.svg\">";
+                else
+                    echo "<img class=\"photo\" src=\"public/uploads/".$user->getAvatar()."\">";
+                ?>
             </a>
             <a class="ingr-select" href="select_ingr">
                 <img class="ingr-icon" src="public/img/ingredients.svg"></img>
@@ -34,7 +38,7 @@
         <div class="main-panel">
             <div class="search-bar">
                 <img class="icon" src="public/img/search.svg">
-                <input name="search" type="text" placeholder="SEARCH FOR RECIPE..."></input>
+                <input name="search" type="text" placeholder="SEARCH FOR INGREDIENTS..."></input>
             </div>
             <div class="parting"></div>
             <div class="categories">
