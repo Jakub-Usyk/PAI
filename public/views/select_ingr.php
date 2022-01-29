@@ -6,6 +6,13 @@
     <title>ingredients page</title>
 </head>
 
+<?php
+    if(!isset($_COOKIE['user_ID'])){
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/login");
+    }
+    ?>
+
 <body>
     <div class="container">
         <div class="navi-bar">

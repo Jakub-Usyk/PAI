@@ -44,8 +44,8 @@ body
 }
 .container > .navi-bar > .avatar > .photo
 {
-    width: 110%;
-    height: 100%;
+    width: 100%;
+    height: 110%;
     border: 0.3vmax solid #F8EFDA;
     border-radius: 100%;
 }
@@ -192,7 +192,7 @@ body
     .container > .navi-bar > .avatar {
         margin-top: 0;
         height: 8vh;
-        width: 16vw;
+        width: 15vw;
         position: absolute;
         margin-left: 42vw;
     }
@@ -215,18 +215,18 @@ body
         font: normal normal normal 1.4vmax Segoe UI;
     }
 
-    .container > .navi-bar > .recipes1 {
+    .container > .navi-bar > .recipes {
         width: 15vw;
         margin-top: 0;
         margin-left: -20vw;
         padding-bottom: 1vh;
     }
 
-    .container > .navi-bar > .recipes1 > .recipes-icon {
+    .container > .navi-bar > .recipes > .recipes-icon {
         width: 12vw;
     }
 
-    .container > .navi-bar > .recipes1 > .text {
+    .container > .navi-bar > .recipes > .text {
         padding: 0;
         margin-top: -1vh;
         font: normal normal normal 1.4vmax Segoe UI;

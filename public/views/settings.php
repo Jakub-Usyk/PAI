@@ -7,6 +7,13 @@
     <title>settings page</title>
 </head>
 
+<?php
+if(!isset($_COOKIE['user_ID'])){
+    $url = "http://$_SERVER[HTTP_HOST]";
+    header("Location: {$url}/login");
+}
+?>
+
 <body>
     <div class="container">
         <div class="navi-bar">
@@ -84,7 +91,6 @@
                     <button class="change-password">Change password</button>
                     <button class="delete-account">Delete account</button>
                 </div>
-                <button class="save">Save</button>
             </div>
         </div>
     </div>
