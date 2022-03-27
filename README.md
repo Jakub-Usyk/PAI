@@ -1,1 +1,1 @@
-# Web application which shows possible cooking recipes using chosen products.
+# Web application which shows possible cooking recipes using chosen products
