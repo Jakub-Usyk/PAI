@@ -1,2 +1,1 @@
-# PAI
-PHP project
+# Web application which shows possible cooking recipes using chosen products.
